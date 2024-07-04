@@ -55,9 +55,12 @@ All reaches must be snapped to nodes and pointing downstream.
 All reaches fields can be blank and will be autofilled (except for t) and output as a temporary scratch layer.
 Centroids and Confluences id fields must be filled and globally unique for each node.
 
+TROUBLESHOOTING:
+No reaches are in the output:
+Check the reaches are snapped to the nodes correctly, with the start point at the start, and end point at the end.
 
-
-
+Slope is negative:
+Check location of start and end points of the reach, according to the DEM. It will return a negative slope if the start point is lower than the end point.
 
 
 --------------Iterate Confluence Names-------------------------------------------------------------------------------------------------------
@@ -103,5 +106,11 @@ Therefore either names A2 or B2 will be selected at random, rather than a separa
 
 According to RORB, both names are valid, however one may make more sense for a given project.
 Therefore some review may be needed for the best result.
+
+TROUBLESHOOTING:
+Name is incorrect or isn't filled:
+Check input id's are NULL, not a blank space.
+Check snapping. Point may not be snapped to reach, or the connected reach is not snapped to a centroid.
+Check reach direction is correct.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
